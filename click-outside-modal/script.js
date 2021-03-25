@@ -2,8 +2,8 @@ let cardbuttons = document.querySelectorAll(".card button");
 let modalInner = document.querySelector(".modal-inner");
 let modalOuter = document.querySelector(".modal-outer");
 
-/*to access the event object we add the event paramenter
-Accessing the event object it's necessary to individuate which button we have clicked on*/
+/*the event object (often called either e or event) is passed automatically to the event handler or callBackFunction. To access it we must include it as a first parameter.
+It provides a lot of useful information about the event. In this case it will tell us which button we have clicked on*/
 function handleCardButtonClick(event) {
   let button = event.currentTarget;
   /*closest is a method similar to querySelector exept it looks "up" instead of "down" for the closest element with the class .card*/
