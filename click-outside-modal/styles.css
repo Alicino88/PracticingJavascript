@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #7ea8be;
+}
+
+.title {
+  color: #f6f0ed;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+button {
+  background-color: transparent;
+  border: solid 2px #c2948a;
+  color: #c2948a;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+  .cards {
+    margin: 0 auto;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+    width: 80%;
+  }
+  .card {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1099px) {
+  .cards {
+    margin: 0 auto;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    width: 70%;
+  }
+  .card {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .cards {
+    margin: 0 auto;
+    margin-top: 200px;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+  }
+}
+
+.card img {
+  width: 100%;
+}
+
+.card {
+  background-color: #28536b;
+  padding: 20px;
+  border-radius: 2px;
+}
+
+.modal-outer {
+  display: grid;
+  background: hsla(201, 46%, 29%, 0.58);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  /*below we tell the browser to ignore the events related to the modal when this is not visible*/
+  pointer-events: none;
+}
+
+.modal-outer.open {
+  opacity: 1;
+  pointer-events: all;
+  /*added nice fade effect when the modal becomes visible*/
+  transition: opacity 0.5s;
+}
+
+.modal-outer img {
+  width: 100%;
+}
+.modal-inner {
+  max-width: 600px;
+  min-width: 400px;
+  min-height: 200px;
+  background: white;
+  padding: 2rem;
+  border-radius: 5px;
+  transform: translateY(-200%);
+  transition: transform 2s;
+}
+
+.modal-outer.open .modal-inner {
+  transform: translateY(0);
+}

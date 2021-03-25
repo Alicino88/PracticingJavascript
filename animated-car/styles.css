@@ -1,0 +1,18 @@
+* {
+  background-color: blue;
+}
+.track {
+  position: relative;
+}
+.saetta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  --x: 0;
+  --y: 0;
+  --rotateX: 0;
+  --rotate: 0;
+  transform: translateX(var(--x)) translateY(var(--y)) rotateY(var(--rotateX))
+    rotate(var(--rotate));
+  background-color: transparent;
+}
